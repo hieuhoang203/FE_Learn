@@ -241,63 +241,56 @@ export default function TeacherAssignments() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Assignments</p>
-                    <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.total}</p>
-                  </div>
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-                    <FileText className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+        {/* Stats Cards */}
+<div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
+    <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Assignments</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.total}</p>
+          </div>
+          <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+            <FileText className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Published</p>
-                    <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.published}</p>
-                  </div>
-                  <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-full">
-                    <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+    <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Published</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.published}</p>
+          </div>
+          <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-full">
+            <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Drafts</p>
-                    <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.draft}</p>
-                  </div>
-                  <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
-                    <AlertCircle className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
-                  </div>
-                </div>
+  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
+    <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Drafts</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.draft}</p>
+          </div>
+          <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
+            <AlertCircle className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
+</div>
 
         {/* Filters */}
         <motion.div
@@ -786,27 +779,3 @@ export default function TeacherAssignments() {
     </div>
   );
 }
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Submissions</p>
-                    <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{assignmentStats.totalSubmissions}</p>
-                  </div>
-                  <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-full">
-                    <Users className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
