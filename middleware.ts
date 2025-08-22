@@ -1,21 +1,39 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// Define protected routes
-const protectedRoutes = ['/admin', '/user'];
+// Define protected routes for different roles
+const protectedRoutes = {
+  admin: ['/admin'],
+  teacher: ['/teacher'],
+  student: ['/student'],
+  user: ['/user']
+}
+
 const authRoutes = ['/login', '/register'];
+const publicRoutes = ['/homie', '/', '/forgot-password'];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const token = request.cookies.get('auth_token')?.value;
 
-  // Check if the current path is protected
-  const isProtectedRoute = protectedRoutes.some(route => 
+  // Allow public routes
+  if (publicRoutes.some(route => pathname.startsWith(route))) {
+    return NextResponse.next();
+  }
+
+  // Check if the current path is an auth route
+  const isAuthRoute = authRoutes.some(route =>
     pathname.startsWith(route)
   );
 
-  // Check if the current path is an auth route
-  const isAuthRoute = authRoutes.some(route => 
+  // If user is authenticated and trying to access auth routes
+  if (isAuthRoute && token) {
+    return NextResponse.redirect(new URL('/homie', request.url));
+  }
+
+  // Check if accessing protected routes
+  const allProtectedRoutes = Object.values(protectedRoutes).flat();
+  const isProtectedRoute = allProtectedRoutes.some(route =>
     pathname.startsWith(route)
   );
 
@@ -26,17 +44,20 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
-  // If user is authenticated and trying to access auth routes
-  if (isAuthRoute && token) {
-    return NextResponse.redirect(new URL('/home', request.url));
-  }
+  // Role-based route protection
+  if (token) {
+    // In a real application, you would decode the JWT token to get user role
+    // For demo purposes, we'll simulate role checking
 
-  // Admin route protection
-  if (pathname.startsWith('/admin')) {
-    // You can add additional role-based checks here
-    // For now, just check if user has token
-    if (!token) {
-      return NextResponse.redirect(new URL('/login', request.url));
+    if (pathname.startsWith('/admin')) {
+      // Only admin can access admin routes
+      // In real app: check if user role is admin
+    } else if (pathname.startsWith('/teacher')) {
+      // Only teachers and admins can access teacher routes
+      // In real app: check if user role is teacher or admin
+    } else if (pathname.startsWith('/student')) {
+      // Only students and admins can access student routes
+      // In real app: check if user role is student or admin
     }
   }
 

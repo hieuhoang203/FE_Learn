@@ -17,6 +17,15 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "TL Study",
   description: "Create by Hoang Van Hieu",
+  icons : {
+    icon: "/tl_study.svg",
+    shortcut: "/tl_study.svg",
+    apple: "/tl_study.svg",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/tl_study.svg",
+    },
+  }
 };
 
 export default function RootLayout({
