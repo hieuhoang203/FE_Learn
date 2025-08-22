@@ -46,6 +46,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import Avatar from '@/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -449,7 +450,10 @@ export default function AdminClasses() {
                         </div>
                       </TableCell>
                       <TableCell>
-                        <p className="font-medium text-gray-900 dark:text-gray-100">{cls.teacher}</p>
+                        <div className="flex items-center space-x-3">
+                          <Avatar name={cls.teacher} size="sm" />
+                          <p className="font-medium text-gray-900 dark:text-gray-100">{cls.teacher}</p>
+                        </div>
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center space-x-2">

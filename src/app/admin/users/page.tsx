@@ -47,6 +47,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import Avatar from '@/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -397,9 +398,7 @@ export default function AdminUsers() {
                     <TableRow key={user.id}>
                       <TableCell>
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
-                            <User className="h-4 w-4 text-gray-500" />
-                          </div>
+                          <Avatar name={user.name} size="sm" />
                           <div>
                             <p className="font-medium text-gray-900 dark:text-gray-100">{user.name}</p>
                             <p className="text-sm text-gray-600 dark:text-gray-400">{user.email}</p>
@@ -554,9 +553,7 @@ export default function AdminUsers() {
           {selectedUser && (
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
-                  <User className="h-8 w-8 text-gray-500" />
-                </div>
+                <Avatar name={selectedUser.name} size="xl" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{selectedUser.name}</h3>
                   <p className="text-gray-600 dark:text-gray-400">{selectedUser.email}</p>
