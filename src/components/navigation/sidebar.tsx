@@ -41,10 +41,10 @@ export default function Sidebar({ userRole }: SidebarProps) {
       case 'admin':
         return [
           { title: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
-          { title: 'User Management', href: '/admin/users', icon: Users },
-          { title: 'Class Management', href: '/admin/classes', icon: School },
-          { title: 'Teacher Management', href: '/admin/teachers', icon: GraduationCap },
-          { title: 'Student Management', href: '/admin/students', icon: UserCheck },
+          { title: 'User', href: '/admin/users', icon: Users },
+          { title: 'Class', href: '/admin/classes', icon: School },
+          { title: 'Teacher', href: '/admin/teachers', icon: GraduationCap },
+          { title: 'Student', href: '/admin/students', icon: UserCheck },
           { title: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
           { title: 'System Settings', href: '/admin/settings', icon: Settings },
         ];

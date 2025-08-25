@@ -31,10 +31,7 @@ import {
   Camera,
   Mail,
   Phone,
-  Calendar,
-  Lock,
-  BookOpen,
-  Users
+  Lock
 } from 'lucide-react';
 import Avatar from '@/components/ui/avatar';
 

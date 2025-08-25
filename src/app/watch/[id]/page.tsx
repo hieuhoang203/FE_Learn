@@ -14,7 +14,6 @@ import {
   Volume2, 
   VolumeX,
   Maximize,
-  Minimize,
   SkipBack,
   SkipForward,
   Settings,
@@ -30,7 +29,6 @@ import {
   FileText,
   User,
   Calendar,
-  Star,
   ChevronDown,
   ChevronUp
 } from 'lucide-react';

@@ -22,19 +22,10 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import {
-  Users,
   Search,
   Filter,
   UserPlus,
   Mail,
-  Award,
-  BookOpen,
   MoreHorizontal,
   Eye,
   Edit,
